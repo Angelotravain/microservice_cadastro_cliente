@@ -32,7 +32,12 @@
  
   - Após os passo acima abra o projeto no Visua studio e clique em iniciar, sua API estará rodando.
 
-- Observações
+#Informações para rodar os testes
+  - Para rodar os testes clique com o botão direito do mouse na solução
+  - Clique no botão Executar testes
+  - Ao executar os testes devem começar a rodar, caso não rodem pode clicar no botão de play (Icone verde de seta para a direita)
+    
+# Observações
 - O Serviço de clientes roda nas portas: https://localhost:44503 e http://localhost:44502
 - O Serviço de endereços roda nas portas: https://localhost:44501 e http://localhost:44500
 - O Serviço da API Gatway roda na porta: https://localhost:5001
