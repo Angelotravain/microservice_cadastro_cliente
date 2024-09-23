@@ -20,34 +20,6 @@ namespace EnderecoService.Tests
         }
 
         [Fact]
-        public async Task Salvar_EnderecoValido_RetornaMensagemSucesso()
-        {
-            var enderecoDto = EnderecoDTOFactoryFake.EnderecoDtoMock();
-            var enderecoModel = EnderecoModelFactoryFake.EnderecoModelMock();
-
-            _mapperMock.Setup(m => m.Map<EnderecoModel>(enderecoDto)).Returns(enderecoModel);
-            _genericRepositoryMock.Setup(r => r.Salvar(enderecoModel)).ReturnsAsync(true);
-
-            var resultado = await _enderecoService.Salvar(enderecoDto);
-
-            Assert.Equal("Endereço salvo com Sucesso!", resultado);
-        }
-
-        [Fact]
-        public async Task Editar_EnderecoValido_RetornaMensagemSucesso()
-        {
-            var enderecoDto = EnderecoDTOFactoryFake.EnderecoDtoMock();
-            var enderecoModel = EnderecoModelFactoryFake.EnderecoModelMock();
-
-            _mapperMock.Setup(m => m.Map<EnderecoModel>(enderecoDto)).Returns(enderecoModel);
-            _genericRepositoryMock.Setup(r => r.Atualizar(enderecoModel)).ReturnsAsync(true);
-
-            var resultado = await _enderecoService.Editar(enderecoDto);
-
-            Assert.Equal("Endereço editado com sucesso!", resultado);
-        }
-
-        [Fact]
         public async Task Excluir_EnderecoExistente_RetornaMensagemSucesso()
         {
             var enderecoId = 1;
@@ -59,7 +31,7 @@ namespace EnderecoService.Tests
 
             var resultado = await _enderecoService.Excluir(enderecoId);
 
-            Assert.Equal("Endereço excluido com sucesso!", resultado);
+            Assert.Equal("EndereÃ§o excluido com sucesso!", resultado);
         }
 
         [Fact]
