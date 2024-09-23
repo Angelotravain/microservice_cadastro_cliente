@@ -10,6 +10,14 @@
   - AutoMapper
   - AutoFac
 
+  #Configuração do projeto novo no Visual Studio
+  - Caso os projetos não abram verifique se eles estão configurados para inicialização;
+  - Clique com o botão direito do mouse na solução > Vá até Configurar projetos de inicialização
+  - Aqui vamos selecionar o item "Vários projetos de inicialização"
+  - Clique no projeto "ClienteService" e em ação deixe ele como "Iniciar";
+  - Clique no projeto "EnderecoService" e em Ação deixe ele como "Iniciar";
+  - Clique no projeto "LoremIpsumLogistica.Api.Gateway" e em Ação deixe ele como "Iniciar";
+  - 
   #Informações para startar o projeto#
 
   - Para inicializar o projeto clone o repositório em sua máquina, ou baixe o arquivo .zip
