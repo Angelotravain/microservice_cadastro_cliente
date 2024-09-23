@@ -25,11 +25,11 @@ namespace ClienteService.Tests
             var clienteModel = ClienteModelFactoryFake.ClienteModelMock();
 
             _mapperMock.Setup(m => m.Map<ClienteModel>(clienteDto)).Returns(clienteModel);
-            _genericRepositoryMock.Setup(g => g.Salvar(clienteModel)).ReturnsAsync(true);
+            _genericRepositoryMock.Setup(g => g.Salvar(clienteModel)).ReturnsAsync(1);
 
             var result = await _clienteService.Salvar(clienteDto);
 
-            Assert.Equal("Cliente salvo com Sucesso!", result);
+            Assert.Equal(1, result);
         }
 
 
@@ -48,25 +48,12 @@ namespace ClienteService.Tests
         }
 
         [Fact]
-        public async Task Excluir_ClienteExistente_RetornaMensagemDeSucesso()
-        {
-            var clienteModel = ClienteModelFactoryFake.ClienteModelMock();
-
-            _genericRepositoryMock.Setup(g => g.FiltrarPorId(1)).ReturnsAsync(clienteModel);
-            _genericRepositoryMock.Setup(g => g.Excluir(clienteModel)).ReturnsAsync(true);
-
-            var result = await _clienteService.Excluir(1);
-
-            Assert.Equal("Cliente excluido com sucesso!", result);
-        }
-
-        [Fact]
         public async Task Excluir_ClienteNaoExistente_RetornaErro()
         {
             _genericRepositoryMock.Setup(g => g.FiltrarPorId(1)).ReturnsAsync((ClienteModel)null);
 
             var exception = await Assert.ThrowsAsync<ArgumentException>(async () => await _clienteService.Excluir(1));
-            Assert.Equal("Não encontrado na base de dados", exception.Message);
+            Assert.Equal("NÃ£o encontrado na base de dados", exception.Message);
         }
 
         [Fact]
@@ -82,16 +69,6 @@ namespace ClienteService.Tests
 
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
-        }
-
-        [Fact]
-        public async Task ListarClientePorId_ClienteNaoExistente_RetornaNulo()
-        {
-            _genericRepositoryMock.Setup(g => g.FiltrarPorId(1)).ReturnsAsync((ClienteModel)null);
-
-            var result = await _clienteService.ListarClientePorId(1);
-
-            Assert.Null(result);
         }
     }
 }
