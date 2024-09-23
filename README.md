@@ -23,3 +23,10 @@
   - Assim seu banco deve estar criado, repita o processo para o projeto de cliente e o projeto de endereço.
  
   - Após os passo acima abra o projeto no Visua studio e clique em iniciar, sua API estará rodando.
+
+- Observações
+- O Serviço de clientes roda nas portas: https://localhost:44503 e http://localhost:44502
+- O Serviço de endereços roda nas portas: https://localhost:44501 e http://localhost:44500
+- O Serviço da API Gatway roda na porta: https://localhost:5001
+
+- O FrontEnd roda consumindo a API Gateway, porém ambos os Swaggers estão de pé para realizar testes
